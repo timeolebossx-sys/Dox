@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Installation rapide Kali
+echo "[*] Installation DoxEngine..."
+chmod +x dox.py
+
+# Créer lien symbolique
+sudo ln -sf "$(pwd)/dox.py" /usr/local/bin/dox
+
+# Vérifier tor
+if ! systemctl is-active tor > /dev/null; then
+    echo "[*] Démarrage de Tor..."
+    sudo systemctl start tor
+fi
+
+echo "[✓] Installation terminée. Utilisez: dox <cible> -t <type>"
