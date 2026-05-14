@@ -1,0 +1,2 @@
+sudo apt update && sudo apt install -y python3-pip tor curl jq
+pip3 install requests beautifulsoup4 selenium colorama
